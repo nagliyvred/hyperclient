@@ -31,9 +31,11 @@ module Hyperclient
 
     # Public: Sends a GET request the the resource url.
     #
+    # params - A Hash to send as GET params
+    #
     # Returns: The parsed response.
-    def get
-      self.class.get(url).parsed_response
+    def get(params = nil)
+      self.class.get(url, body: params).parsed_response
     end
 
     # Public: Sends a POST request the the resource url.

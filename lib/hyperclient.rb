@@ -10,10 +10,6 @@ module Hyperclient
   #
   # Returns a Hyperclient::EntryPoint
   def self.new(url, &block)
-    if block
-      Hyperclient::EntryPoint.new(url, block)
-    else
-      Hyperclient::EntryPoint.new(url)
-    end
+    Hyperclient::EntryPoint.new(url, &block)
   end
 end
